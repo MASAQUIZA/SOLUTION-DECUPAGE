@@ -1,0 +1,21 @@
+##* Que vaut 5B1 (hexa)en base 2 ?*##
+  - 5B1 (hexa)= 0101 1011 0001 (binaire)
+##* Que vaut 0xA en décimal ?*##
+  - Le sysème hexadécimal la base de 16 multiple de 16n n=0 
+  - A en hexadécila est 10 
+  - 0xA est un chifre unique donc la reponseest:
+    10 (décimal)
+##* En hexadécimal, quelles sont les valeurs maximales et minimales que l'on peut représenter sur 1 octets ?*##
+  - Valeur minimale: 0x00 (hexadécimal) = 0 : 00000000 (binaire)
+  - Valeur maximal: 0xFF (hecadécimal) = 1 :11111111 (binaire).
+##*Donner la représentation binaire et hexadécimale de l'adresse IP 192.168.1.80*##
+Chaque octet de l'adresse IP est converti en 2 chiffres hexadécimaux :
+  - 192 en hexadécimal :𝐶0
+  - 168 en hexadécimal :𝐴8
+  - 1 en hexadécimal :01
+  - 80 en hexadécimal :50
+#*Représentation hexadécimale complète :*#
+  - 192.168.1.80 = 0xC0.0xA8.0x01.0x50
+#*Résultat final :*#
+  - Binaire : 11000000.10101000.00000001.01010000
+  - Hexadécimal :0xC0.0xA8.0x01.0x50
