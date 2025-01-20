@@ -1,0 +1,34 @@
+## SOCIETE FICTIVE
+4 Pôles informatique
+# Les reseau en 172.16.1.0/24
+##*Repatition des besoins*
+- Le Pôle informatique (6 bureaux, environ 50 équipements au total)
+- Le Pôle développement (6 bureaux, environ 12 équipements au total)
+- Le Pôle Administratif (4 bureaux, environ 20 équipements au total)
+- Le Pôle Technicien (4 bureaux, environ 15 équipements au total)
+##**Découpage symétrique**
+- Attribuer la même taille de sous-réseau à chaque pôle, en prévoyant une taille suffisante pour le pôle le plus grand.
+    - Le pôle le plus grand (Informatique) a besoin de 50 adresses IP.
+    -Le plus petit sous-réseau à couvrir au moins 50 hôtes correspond à un masque /26, soit 64 adresses par sous-réseau (62 utilisables).
+
+##*Répartion symétrique*
+
+-*pôle*          *CIDR*           *Adresse réseau*    @_diffusion*      *Hôtes utilisables*
+-Informatique    172.16.1.0/26       172.16.1.0        172.16.1.63       172.16.1.1 - 172.16.1.62
+-Développement   172.16.1.64/26      172.16.1.64       172.16.1.127      172.16.1.65 - 172.16.1.126
+-Administratif   172.16.1.128/26     172.16.1.128      172.16.1.191      172.16.1.129 - 172.16.1.190
+-Technicien      172.16.1.192/26     172.16.1.192      172.16.1.255      172.16.1.193 - 172.16.1.254
+
+##**Découpage Asymétrique**
+-Attribue des tailles de sous-réseau différentes selon les besoins :
+  -Le pôle Informatique a besoin de 50 adresses : ça correspond à /26.
+  -Le pôle Développement a besoin de 12 adresses : ça correspond à /28 (16 adresses, 14 utilisables).
+  -Le pôle Administratif a besoin de 20 adresses : ça correspond à /27 (32 adresses, 30 utilisables).
+  -Le pôle Technicien a besoin de 15 adresses : ça correspond à /28.
+
+##*Répartion symétrique*
+-*pôle*          *CIDR*           *Adresse réseau*    @_diffusion*      *Hôtes utilisables*
+-Informatique    172.16.1.0/26       172.16.1.0        172.16.1.63       172.16.1.1 - 172.16.1.62
+-Développement   172.16.1.64/28      172.16.1.64       172.16.1.79       172.16.1.65 - 172.16.1.78
+-Administratif   172.16.1.128/27     172.16.1.80       172.16.1.111      172.16.1.81 - 172.16.1.110
+-Technicien      172.16.1.192/27     172.16.1.112      172.16.1.127      172.16.1.113 - 172.16.1.126
